@@ -17,6 +17,7 @@ import { AdressesRegisteredComponent } from './adresses-registered/adresses-regi
 import { UserService } from './services/user.service';
 import { LocationService } from './services/location.service';
 import { HomeComponent } from './home/home.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { HomeComponent } from './home/home.component';
     PictureUploadComponent,
     AdressesRegisteredComponent,
     HomeComponent,
+    ProfilePageComponent,
    
   ],
   imports: [

@@ -1,4 +1,6 @@
 <div style="background-image: url('/assets/images/thunderstorm.jpg');" >
+    <button mdbBtn color="primary" (click)="openModal()">Open modal</button>
+
     <app-weather-actual-location></app-weather-actual-location>
     <div class="row">
         <div class="col-md-for-hour col-sm-3 col-4" *ngFor="let info of listInfos">
