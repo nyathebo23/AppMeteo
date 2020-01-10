@@ -1,0 +1,69 @@
+
+select{
+    color: gray;
+    padding-left: 7px;
+    border : 1px #ced4da solid;
+    border-radius: 4px;
+    width: 100%;
+    height: 31px;
+    float: left;
+}
+
+nz-date-picker{
+    width: 100%;
+    float: left;
+}
+.error-label{
+    color: red;
+    float: left;
+}
+    
+.profil{
+    border : 1px solid #ced4da; 
+    border-radius: 10px;
+    color:#9933CC;
+}
+.red-border{
+    border: 1px red solid;
+    box-shadow: 2px 2px 2px #ef5350;
+}
+
+.btn-violet{
+    background-color: violet;
+    color: white;
+}
+
+.btn-link{
+    color:#aa66cc;
+}
+
+.btn-link:hover{
+    color: #9933CC;
+}
+
+#profil{
+  display: none;  
+}
+.card-signup{
+    margin: auto;
+    width: 480px;
+    padding: 40px;
+    box-shadow: 10px 10px 10px violet;
+    margin: auto;
+    background-color: white;    
+}
+
+.background-des{
+    background-image: url('/assets/images/background-forLogin.png');
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+
+h1{
+    font-size: 40px;
+    font-family: audiowide;
+    text-align: center;
+    color: #9933CC;
+    margin-bottom: 50px;
+}

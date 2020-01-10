@@ -1,0 +1,90 @@
+<div class="background-des">
+    <div class="card-signup">
+        <form [formGroup]="signupForm" class="text-center border border-light" (submit)="onSubmit()">
+            <h1>Sign up</h1>
+
+            <div class="form-group mb-4">
+                <input style="display: none;" type="file" formControlName="profil_image" id="profil">
+                <div class="text-center">
+                    <img class="profil" src="" (click)="fileInputManage()" id="target" height="150" width="200" alt="Cliquez pour ajouter une photo"/>
+                </div>
+                <!-- <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                    </div>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01">
+                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                  </div> -->
+            </div>
+            
+            <div class="form-group mb-4">
+                <input type="text" formControlName="username" 
+                                    class="form-control" 
+                                    placeholder="Username"
+                                    [ngClass]="{'red-border' : signupForm.get('username').invalid && signupForm.get('username').dirty}"
+                                    >
+                <div *ngIf="signupForm.get('username').invalid" class="error-label">
+                    <div *ngIf="signupForm.get('username').hasError('required') && (signupForm.get('username').dirty)"> 
+                        <i class="fa fa-exclamation-circle"></i> Username is required
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="form-group mb-4">
+                <input type="text" formControlName="firstname" 
+                                    class="form-control" 
+                                    placeholder="First name"
+                                    [ngClass]="{'red-border' : signupForm.get('firstname').invalid && signupForm.get('firstname').dirty}">
+                <div *ngIf="signupForm.get('firstname').invalid" class="error-label">
+                    <div *ngIf="signupForm.get('firstname').hasError('required') && signupForm.get('firstname').dirty"> <i class="fa fa-exclamation-circle"></i> Firstname is required</div>
+                </div>
+            </div>
+            
+            <div class="form-group mb-4">
+                <input type="text" formControlName="lastname" 
+                                    class="form-control" 
+                                    placeholder="Last name"
+                                    [ngClass]="{'red-border' : signupForm.get('lastname').invalid && signupForm.get('lastname').dirty}">
+                <div *ngIf="signupForm.get('lastname').invalid" class="error-label">
+                    <div *ngIf="signupForm.get('lastname').hasError('required') &&  signupForm.get('lastname').dirty"> <i class="fa fa-exclamation-circle"></i> Lastname is required</div>
+                </div>
+            </div>
+          
+            <div class="form-row mb-4">
+                <div class="col">
+                    <select formControlName="sexe">
+                        <option value="" disabled selected hidden>Sexe</option>
+                        <option value="M">Masculin</option>
+                        <option value="F">Feminin</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <nz-date-picker 
+                        formControlName="date"
+                        [nzFormat]="dateFormat"
+                        [nzMode]="mode"
+                        (nzOnOpenChange)="handleDateOpenChange($event)"
+                        >
+                    </nz-date-picker>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="password" formControlName="password" 
+                                        class="form-control" 
+                                        placeholder="Password"
+                                        [ngClass]="{'red-border' : signupForm.get('password').invalid && signupForm.get('password').dirty}">
+                <div *ngIf="signupForm.get('password').invalid" class="error-label">
+                    <div *ngIf="signupForm.get('password').hasError('required') && signupForm.get('password').dirty"> <i class="fa fa-exclamation-circle"></i> Password is required</div>
+                </div>
+            </div>
+            
+            <button class="btn btn-violet my-4 btn-block" [disabled]="signupForm.invalid" type="submit">Sign in</button>
+
+        </form>
+    </div>
+</div>
+       

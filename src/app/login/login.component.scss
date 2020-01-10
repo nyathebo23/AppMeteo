@@ -1,0 +1,46 @@
+
+.error-label{
+    padding-left: 10px;
+    color: red;
+}
+    
+.red-border{
+    border: 1px red solid;
+    box-shadow: 2px 2px 2px #ef5350;
+
+}
+.btn-violet{
+    background-color: violet;
+    color: white;
+}
+.btn-link{
+    color:#aa66cc;
+}
+
+.btn-link:hover{
+    color: #9933CC;
+}
+
+.card-login{
+    margin-top: 200px;
+    width: 500px;
+    padding: 50px;
+    box-shadow: 10px 10px 10px violet;
+    margin: auto;
+    background-color: white;    
+}
+
+.background-des{
+    background-image: url('/assets/images/background-forLogin.png');
+    height: 700px;
+    padding-top: 100px;
+}
+
+
+h2{
+    font-size: 40px;
+    font-family: audiowide;
+    text-align: center;
+    color: #9933CC;
+    margin-bottom: 50px;
+}

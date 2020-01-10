@@ -1,0 +1,44 @@
+.actual-situation{
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 10px darkgray;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-radius: 40px;
+    margin: auto;
+    min-width: 500px;
+}
+.adress{
+    font-size: 20px;
+    font-family: 'Trebuchet MS';
+  //  color: whitesmoke;
+}
+.temperature{
+    font-size: 100px;
+    position: relative;
+    font-family: Montserrat;
+   // color: whitesmoke;
+}
+.date{
+    font-size: 18px;
+   // color: white;
+}
+.col-md-6{
+    margin: auto;
+}
+.hour{
+    font-size: 18px;
+    margin: auto;
+  //  color: white;
+}
+.content-info-sup{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-family: audiowide;   
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+

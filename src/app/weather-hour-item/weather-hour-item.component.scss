@@ -1,0 +1,60 @@
+.card {
+    border-radius: 15px;
+    background-color: transparent;
+    height: 180px;
+    width: 120px;
+    margin: 0 8px 16px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Consolas; 
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+    color: white;
+    border: transparent;
+  }
+  .card:hover {
+    border: 1px solid #eee;
+  }
+
+  .hour{
+        font-size: medium;
+        color: white;
+        font-size: 20px;
+    }
+
+  .img-cloud{
+      flex-direction: row;
+  }
+
+  .temp{
+      flex-direction: row;
+      font-size: 20px;
+  }
+
+  .humidity{
+    font-size: 18px;
+    opacity: 40%;
+  }
+  .col-md-for-hour{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    -ms-flex: 0 0 12.5%;
+    flex: 0 0 12.5%;
+    max-width: 12.5%;
+  }
+
+  .col-md-for-week{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    -ms-flex: 0 0 14.28571%;
+    flex: 0 0 14,28571%;
+    max-width: 14,28571%;
+
+  }
