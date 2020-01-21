@@ -1,13 +1,13 @@
 
   @media(min-width: 1000px){
-    .col-md-for-week{
+    .col-md-for-day{
         position: relative;
         width: 100%;
         padding-right: 15px;
         padding-left: 15px;
         -ms-flex: 0 0 14.28571%;
-        flex: 0 0 14,28571%;
-        max-width: 14,28571%;   
+        flex: 0 0 14.28571%;
+        max-width: 14.28571%;   
       }
       
       .col-md-for-hour{
@@ -20,3 +20,23 @@
         max-width: 12.5%;
       }
   }
+  .btn-flat{
+    border : 2px solid white;
+  }
+  .mark-btn{
+    text-shadow :2px 2px 2px violet;
+    box-shadow: inset 0  0 10px #000000;
+  }
+  
+  select{
+    color: whitesmoke;
+    padding-left: 7px;
+    border : 1px #ced4da solid;
+    border-radius: 4px;
+    width: 300px;
+    height: 50px;
+    float: left;
+    margin-left: 20px;
+    font-size: 24px;
+    background: transparent;
+}

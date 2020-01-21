@@ -6,4 +6,14 @@ import { Injectable } from '@angular/core';
 export class LocationService {
 
   constructor() { }
+
+
+  registerLocation(location : LocationService){
+    
+  }
+
+  getAllLocations(){
+
+  }
+
 }

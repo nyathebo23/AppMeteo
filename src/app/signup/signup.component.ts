@@ -7,6 +7,7 @@ import { User } from '../models/user.model';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
+
 export class SignupComponent implements OnInit {
 
   signupForm : FormGroup
@@ -30,16 +31,13 @@ export class SignupComponent implements OnInit {
       profil_image : [null, [Validators.required]]     
     })
     this.testFile()
-    this.signupForm.get('username').valueChanges.subscribe((data) => {
-      console.log(this.signupForm.get('username').touched, this.signupForm.get('username').dirty, this.signupForm.get('username').hasError('required'))
-    })
   }
 
   handleDateOpenChange(open: boolean): void {
     if(this.signupForm.get('date').value)
         console.log(this.signupForm.get('date').value.toLocaleDateString());
-    
   }
+
   onSubmit(){
       console.log(JSON.stringify(new User('sfs','fs','sfs','fs','fs',new Blob(),'')))
   }

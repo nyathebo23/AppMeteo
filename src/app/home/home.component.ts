@@ -9,18 +9,35 @@ import {AdressesRegisteredComponent} from '../adresses-registered/adresses-regis
 })
 export class HomeComponent implements OnInit {
 
-  listInfos= new Array()
-  modalRef: MDBModalRef;
+  listInfosHour= new Array()
+  listInfosDay = new Array()
+  daysContract = new Array('LUN', 'MAR', 'MER', 'JEU', 'VEN', 'SAM', 'DIM')
+  days = new Array("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche")
+  modalRef: MDBModalRef
+  modeAffiche : string
+  dayChosen : string
+  
   constructor(private modalService: MDBModalService) { }
 
   ngOnInit() {
     let inf = {hour : '12:00', temp : '40°', hum : '50%', image_url : '/assets/images/nuage.png'}
+    let inf2 = {day : 'LUN' ,temp : '40°', hum : '50%', image_url : '/assets/images/nuage.png'}
     for(let i = 0 ; i<8; i++){
-      this.listInfos.push(inf)
+      this.listInfosHour.push(inf)
     }
+    for(let i=0; i<7; i++){
+      this.listInfosDay.push(inf2)
+    }
+    this.dayChosen = this.days[new Date().getDay()-1]
+    this.modeAffiche = 'hour'
   }
-  openModal() {
-    this.modalRef = this.modalService.show(AdressesRegisteredComponent)
+
+  setHoursInfosMeteo(){
+    this.modeAffiche = 'hour'
+  }
+
+  setDaysInfosMeteo(){
+    this.modeAffiche = 'day'
   }
 
 }

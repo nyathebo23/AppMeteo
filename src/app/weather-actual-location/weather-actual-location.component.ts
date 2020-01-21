@@ -15,7 +15,7 @@ export class WeatherActualLocationComponent implements OnInit {
   pression : string
   adresse : string
   img_url:string
-  
+  windSpeed : string
   constructor() {
 
    }
@@ -24,8 +24,10 @@ export class WeatherActualLocationComponent implements OnInit {
     this.temperature = '50°'
     this.date = new Date()
     this.humidite = '80%'
-    this.pression = '120 bar'
+    this.pression = '1014 hbar'
     this.adresse = 'Yaounde, Cameroun'
+    this.windSpeed = '4 km/h'
+
   }
 
 }

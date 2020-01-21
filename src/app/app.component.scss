@@ -8,25 +8,3 @@
     flex-direction: row;
 }
 
-
-  @media(min-width: 1000px){
-    .col-md-for-week{
-        position: relative;
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
-        -ms-flex: 0 0 14.28571%;
-        flex: 0 0 14,28571%;
-        max-width: 14,28571%;   
-      }
-      
-      .col-md-for-hour{
-        position: relative;
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
-        -ms-flex: 0 0 12.5%;
-        flex: 0 0 12.5%;
-        max-width: 12.5%;
-      }
-  }

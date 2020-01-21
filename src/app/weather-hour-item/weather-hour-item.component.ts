@@ -12,7 +12,7 @@ export class WeatherHourItemComponent implements OnInit {
  @Input() humidite : string
  @Input() temperature : string
  @Input() image_url: string
-
+ @Input() day : string
   constructor() { }
 
   ngOnInit() {

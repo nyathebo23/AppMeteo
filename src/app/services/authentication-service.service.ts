@@ -10,12 +10,12 @@ import { UserService } from './user.service';
 export class AuthenticationService {
 
   currentUser : User
-  constructor(private userService:UserService) { }
+  constructor(private userService: UserService) { }
 
   login(username : string, password : string){
     return new Promise<User>((res, rej) => {
       this.currentUser = this.userService.getUserByUserAndPass(username, password)
-        res(this.currentUser)
+        res(this.userService.getUserByUserAndPass(username, password))  
     })
   }
 

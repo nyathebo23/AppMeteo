@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private authenticationService : AuthenticationService, private router:Router) {
     if (this.authenticationService.currentUser) { 
-      this.router.navigate(['/']);
-  }
+      this.router.navigate(['home']);
+    }
   }
 
     ngOnInit() {
@@ -24,16 +24,14 @@ export class LoginComponent implements OnInit {
         username: ['', [Validators.required]],
         password: ['', [Validators.required]],
       }); 
-      this.loginForm.get('username').valueChanges.subscribe((data) => {
-        console.log(this.loginForm.get('username').touched, this.loginForm.get('username').dirty, this.loginForm.get('username').hasError('required'))
-      })
     }
 
     onSubmit(){
         this.authenticationService.login(this.loginForm.get('username').value, this.loginForm.get('password').value).
         then(data => {
           if(data){
-            this.router.navigate(['/'])
+            this.router.navigate(['home'])
+            this.authenticationService.currentUser = data
           }
           else{
             this.error = 'Username or password is incorrect'

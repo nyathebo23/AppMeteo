@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AuthGuard } from './auth-guard.service';
+import { DbmanagerService } from './dbmanager.service';
 
-describe('AuthGuardService', () => {
+describe('DbmanagerService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AuthGuard = TestBed.get(AuthGuard);
+    const service: DbmanagerService = TestBed.get(DbmanagerService);
     expect(service).toBeTruthy();
   });
 });

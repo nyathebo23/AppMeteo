@@ -1,15 +1,48 @@
 <div style="background-image: url('/assets/images/thunderstorm.jpg');" >
-    <button mdbBtn color="primary" (click)="openModal()">Open modal</button>
-
+    <!-- <button mdbBtn color="primary" (click)="openModal()">Open modal</button> -->
     <app-weather-actual-location></app-weather-actual-location>
-    <div class="row">
-        <div class="col-md-for-hour col-sm-3 col-4" *ngFor="let info of listInfos">
-            <app-weather-hour-item [hour]="info.hour" 
-                        [temperature]="info.temp" 
-                        [humidite]="info.hum" 
-                        [image_url]="info.image_url">
-            </app-weather-hour-item>
+
+        <div class="row" style="margin-bottom: 20px;">
+            <div class="btn-group text-center" style="margin: auto;" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-flat" [ngClass]="{'mark-btn' : modeAffiche === 'hour'}" (click)="setHoursInfosMeteo()">
+                    Infos horaires de {{dayChosen}} 
+                </button>
+                <button type="button" class="btn btn-flat" [ngClass]="{'mark-btn' : modeAffiche === 'day'}" (click)="setDaysInfosMeteo()" >
+                    Infos journalières (semaine courante)
+                </button>
+            </div>
         </div>
-    </div>
+        <div class="row" style="margin-bottom: 30px;" *ngIf="modeAffiche === 'hour'">
+            <select [(ngModel)]="dayChosen">
+                <option  value="Lundi" selected="dayChosen === 'Lundi'">Lundi</option>
+                <option  value="Mardi" selected="dayChosen === 'Mardi'">Mardi</option>
+                <option  value="Mercredi" selected="dayChosen === 'Mercredi'">Mercredi</option>
+                <option  value="Jeudi" selected="dayChosen === 'Jeudi'">Jeudi</option>
+                <option  value="Vendredi" selected="dayChosen === 'Vendredi'">Vendredi</option>
+                <option  value="Samedi" selected="dayChosen === 'Samedi'">Samedi</option>
+                <option  value="Dimanche" selected="dayChosen === 'Dimanche'">Dimanche</option>
+
+            </select>
+        </div>
+        <div class="row" *ngIf="modeAffiche === 'hour'">
+            <div class="col-md-for-hour col-sm-3 col-4"  *ngFor="let info of listInfosHour">
+                <app-weather-hour-item 
+                            [hour]="info.hour" 
+                            [temperature]="info.temp" 
+                            [humidite]="info.hum" 
+                            [image_url]="info.image_url">
+                </app-weather-hour-item>
+            </div>
+        </div>
+        <div class="row" *ngIf="modeAffiche === 'day'">
+            <div class="col-md-for-day col-sm-3 col-4"  *ngFor="let info of listInfosDay">
+                <app-weather-hour-item 
+                            [day]="info.day" 
+                            [temperature]="info.temp" 
+                            [humidite]="info.hum" 
+                            [image_url]="info.image_url">
+                </app-weather-hour-item>
+            </div>
+        </div>
 </div>
     
