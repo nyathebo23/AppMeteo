@@ -17,9 +17,9 @@ import { AdressesRegisteredComponent } from './adresses-registered/adresses-regi
 import { UserService } from './services/user.service';
 import { LocationService } from './services/location.service';
 import { HomeComponent } from './home/home.component';
-import { NgxIndexedDBModule } from 'ngx-indexed-db';
+import { NgxIndexedDBModule} from 'ngx-indexed-db';
 
-const dbConfig: DBConfig  = {
+const dbConfig = {
   name: 'MyDb',
   version: 1,
   objectStoresMeta: [{
@@ -30,9 +30,20 @@ const dbConfig: DBConfig  = {
       { name: 'region', keypath: 'region', options: { unique: false } },
       { name: 'ville', keypath: 'ville', options: { unique: false } }
     ]
+  },{
+    store: 'user',
+    storeConfig: { keyPath: 'id', autoIncrement: true },
+    storeSchema: [
+      { name: 'name', keypath: 'name', options: { unique: false } },
+      { name: 'surname', keypath: 'surname', options: { unique: false } },
+      { name: 'date_naissance', keypath: 'date_naissance', options: { unique: false } },
+      { name: 'sexe', keypath: 'sexe', options: { unique: false } },
+      { name: 'username', keypath: 'username', options: { unique: false } },
+      { name: 'password', keypath: 'password', options: { unique: false } },
+      { name: 'profil', keypath: 'profil', options: { unique: false } }
+    ]
   }]
 };
-
 
 @NgModule({
   declarations: [
