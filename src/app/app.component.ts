@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'AppMeteo';
   nb = [1,2,3,8,9,6, 74, 56]
+  constructor(){
+
+  }
 }

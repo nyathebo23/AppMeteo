@@ -17,12 +17,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { MDBBootstrapModule, MDBModalService } from 'angular-bootstrap-md';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './helpers/auth-guard.service';
+import { DataapiproviderService } from './services/dataapiprovider.service';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 
 const appRoutes: Routes = [
   { path: 'home', component:HomeComponent, canActivate : [AuthGuard]},
   { path: 'auth', component: LoginComponent },
-  { path: 'signup', component: SignupComponent }
+  { path: 'signup', component: SignupComponent },
+  { path : 'profile', component : ProfilePageComponent}
 ];
 
 @NgModule({
@@ -33,7 +37,9 @@ const appRoutes: Routes = [
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    AdressesRegisteredComponent
+    AdressesRegisteredComponent,
+    ProfilePageComponent,
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule, 
@@ -50,7 +56,8 @@ const appRoutes: Routes = [
               UserService,
               LocationService,
               MDBModalService,
-              AuthGuard
+              AuthGuard,
+              DataapiproviderService
             
   ],
   bootstrap: [AppComponent]

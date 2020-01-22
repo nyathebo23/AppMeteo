@@ -53,8 +53,20 @@ nz-date-picker{
     background-color: white;    
 }
 
+@media(max-width : 420px){
+    .card-signup{
+        margin-top: 200px;
+        width: 300px;
+        padding: 10px;
+        box-shadow: 5px 5px 5px violet;
+        margin: auto;
+        background-color: white;    
+    }
+    
+}
+
 .background-des{
-    background-image: url('/assets/images/background-forLogin.png');
+    background-image: url('/assets/images/fonds/background-forLogin.png');
     padding-top: 50px;
     padding-bottom: 30px;
 }

@@ -1,0 +1,109 @@
+<div class="mt-50">
+    <button class="btn-flat">CHANGER DE MOT DE PASSE</button>
+    <div class="card-profile">
+        <form [formGroup]="profileForm" class="text-center border border-light" (submit)="onSubmit()">
+            <h1 class="bg-dark">Profile</h1>
+            <div class="form-group mb-4">
+                <input style="display: none;" type="file" formControlName="profil_image" id="profil">
+                <div class="text-center">
+                    <img class="profil" src=""  id="target" height="150" width="200" alt="Cliquez pour ajouter une photo"/>
+                    <button class="btn-edit"  style="margin-left: 20px;" (click)="editProfileImage(false)"> <img src="/assets/images/edit_profile_image.png" height="30" width="40" alt=""> </button>
+                </div>
+            </div>
+            
+            <div class="form-group mb-4">
+                <div class="row">
+                    <div class="col-md-10">
+                        <input type="text" formControlName="username" 
+                        class="form-control" 
+                        placeholder="Username"
+                        [ngClass]="{'red-border' : profileForm.get('username').invalid && profileForm.get('username').dirty}"
+                        
+                        >
+                        <div *ngIf="profileForm.get('username').invalid" class="error-label">
+                            <div *ngIf="profileForm.get('username').hasError('required') && (profileForm.get('username').dirty)"> 
+                                <i class="fa fa-exclamation-circle"></i> Username is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                       <button class="btn-edit" (click)="editUsername(false)" [disabled]="!list_disabledField.username"> <img src="/assets/images/edit.png" height="20" width="20" alt="" > </button> 
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="form-group mb-4">
+                <div class="row">
+                    <div class="col-md-10">
+                        <input type="text" formControlName="firstname" 
+                                    class="form-control" 
+                                    placeholder="First name"
+                                    [ngClass]="{'red-border' : profileForm.get('firstname').invalid && profileForm.get('firstname').dirty}"
+                                >
+                        <div *ngIf="profileForm.get('firstname').invalid" class="error-label">
+                            <div *ngIf="profileForm.get('firstname').hasError('required') && profileForm.get('firstname').dirty"> <i class="fa fa-exclamation-circle"></i> Firstname is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn-edit" (click)="editFirstName(false)"  [disabled]="!list_disabledField.firstname"> <img src="/assets/images/edit.png" height="20" width="20" alt=""> </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group mb-4">
+                <div class="row">
+                    <div class="col-md-10">
+                        <input type="text" formControlName="lastname" 
+                        class="form-control" 
+                        placeholder="Last name"
+                        [ngClass]="{'red-border' : profileForm.get('lastname').invalid && profileForm.get('lastname').dirty}"
+                      >
+                        <div *ngIf="profileForm.get('lastname').invalid" class="error-label">
+                            <div *ngIf="profileForm.get('lastname').hasError('required') &&  profileForm.get('lastname').dirty"> <i class="fa fa-exclamation-circle"></i> Lastname is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn-edit" (click)="editLastName(false)"  [disabled]="!list_disabledField.lastname"> <img src="/assets/images/edit.png" height="20" width="20" alt=""> </button>
+                    </div>
+                </div>
+            </div>
+          
+            <div class="form-row mb-4">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <select formControlName="sexe">
+                                <option value="" disabled selected hidden>Sexe</option>
+                                <option value="M">Masculin</option>
+                                <option value="F">Feminin</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn-edit" (click)="editSexe(false)"  [disabled]="!list_disabledField.sexe"  style="margin-left: -20px;">  <img src="/assets/images/edit.png" height="20" width="20" alt=""> </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <nz-date-picker 
+                            formControlName="date_of_birth"
+                            [nzFormat]="dateFormat"
+                            [nzMode]="mode"
+                            nzPlaceHolder="Date of Birth"
+                            (nzOnOpenChange)="handleDateOpenChange($event)"
+                            >
+                            </nz-date-picker>
+                        </div>
+                        <div class="col-md-2" style="margin-left: -20px;">
+                            <button class="btn-edit" (click)="editDate(false)"  [disabled]="!list_disabledField.date_of_birth"> <img src="/assets/images/edit.png" height="20" width="20" alt=""> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-violet my-4 btn-block" [disabled]="profileForm.invalid" type="submit">Modifier</button>
+        </form>
+    </div>
+</div>
+       

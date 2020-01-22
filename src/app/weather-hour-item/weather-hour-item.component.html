@@ -2,5 +2,7 @@
    <div class="day" *ngIf="hour === undefined" >  {{day}} </div>
    <div class="hour" *ngIf="day === undefined" >  {{hour}} </div>
    <div class="img-cloud"> <img src="{{image_url}}" height="80"/> </div> 
-   <div class="temp"> {{temperature}} <span class="humidity">{{humidite}}</span> </div>
+   <div class="temp"> <img src="/assets/images/instruments/thermometer.png" height="16" width="14" style="margin-right: -5px;"> {{temperature}} 
+      <span class="humidity"> <img src="/assets/images/instruments/hygrometer.png" height="12" width="10" style="margin-right: -3px;"> {{humidite}}</span> 
+   </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from '../models/user.model';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +17,7 @@ export class SignupComponent implements OnInit {
   mode : string;
   fileBlob : Blob
    
-  constructor(private formBuilder : FormBuilder) { 
+  constructor(private formBuilder : FormBuilder, private userService : UserService) { 
 
   }
 
@@ -39,7 +40,8 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(){
-      console.log(JSON.stringify(new User('sfs','fs','sfs','fs','fs',new Blob(),'')))
+    this.userService.register(new User(this.signupForm.get('firstname').value, this.signupForm.get('lastname').value, this.signupForm.get('date').value
+    , this.signupForm.get('username').value, this.signupForm.get('password').value, this.fileBlob, this.signupForm.get('sexe').value ))
   }
 
   fileInputManage(){

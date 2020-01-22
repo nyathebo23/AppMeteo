@@ -1,0 +1,88 @@
+
+select{
+    color: gray;
+    padding-left: 7px;
+    border : 1px #ced4da solid;
+    border-radius: 4px;
+    width: 100%;
+    height: 31px;
+    float: left;
+}
+
+nz-date-picker{
+    width: 100%;
+    float: left;
+}
+.error-label{
+    color: red;
+    float: left;
+}
+.btn-edit{
+    background: transparent;
+}
+.btn-flat{
+    background: transparent;
+    border : 2px solid #9933CC;
+    color: blueviolet;
+    height: 40px;
+}
+.profil{
+    border : 1px solid #ced4da; 
+    border-radius: 10px;
+    color:#9933CC;
+}
+.red-border{
+    border: 1px red solid;
+    box-shadow: 2px 2px 2px #ef5350;
+}
+
+.btn-violet{
+    background-color: violet;
+    color: white;
+}
+
+.btn-link{
+    color:#aa66cc;
+}
+
+.btn-link:hover{
+    color: #9933CC;
+}
+
+#profil{
+  display: none;  
+}
+.card-profile{
+    margin: auto;
+    width: 480px;
+    padding: 40px;
+    box-shadow: 10px 10px 10px violet;
+    margin: auto;
+    background-color: white;    
+}
+
+.mt-50{
+    margin-top: 100px;
+}
+
+@media(max-width : 420px){
+    .card-profile{
+        margin-top: 200px;
+        width: 300px;
+        padding: 10px;
+        box-shadow: 5px 5px 5px violet;
+        margin: auto;
+        background-color: white;    
+    }
+    
+}
+
+
+
+h1{
+    font-size: 40px;
+    font-family: audiowide;
+    text-align: center;
+    color: #9933CC;
+    margin-bottom: 50px;
+}

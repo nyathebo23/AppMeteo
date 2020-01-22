@@ -1,13 +1,13 @@
-<div style="background-image: url('/assets/images/thunderstorm.jpg');" >
+<div style="background-image: url('/assets/images/fonds/thunderstorm.jpg'); padding: 50px;" >
     <!-- <button mdbBtn color="primary" (click)="openModal()">Open modal</button> -->
     <app-weather-actual-location></app-weather-actual-location>
 
         <div class="row" style="margin-bottom: 20px;">
             <div class="btn-group text-center" style="margin: auto;" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-flat" [ngClass]="{'mark-btn' : modeAffiche === 'hour'}" (click)="setHoursInfosMeteo()">
+                <button type="button" class="btn btn-flat btn-width" [ngClass]="{'mark-btn' : modeAffiche === 'hour'}" (click)="setHoursInfosMeteo()">
                     Infos horaires de {{dayChosen}} 
                 </button>
-                <button type="button" class="btn btn-flat" [ngClass]="{'mark-btn' : modeAffiche === 'day'}" (click)="setDaysInfosMeteo()" >
+                <button type="button" class="btn btn-flat btn-width" [ngClass]="{'mark-btn' : modeAffiche === 'day'}" (click)="setDaysInfosMeteo()" >
                     Infos journalières (semaine courante)
                 </button>
             </div>

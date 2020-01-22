@@ -9,6 +9,13 @@
     margin: auto;
     min-width: 500px;
 }
+
+@media(max-width : 420px){
+    .actual-situation{
+        width: 300px;
+        min-width: 300px;
+    }
+}
 .adress{
     font-size: 20px;
     font-family: 'Trebuchet MS';

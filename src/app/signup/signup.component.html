@@ -1,6 +1,6 @@
 <div class="background-des">
     <div class="card-signup">
-        <form [formGroup]="signupForm" class="text-center border border-light" (submit)="onSubmit()">
+        <form [formGroup]="signupForm" class="text-center border border-light" (ngSubmit)="onSubmit()">
             <h1>Sign up</h1>
 
             <div class="form-group mb-4">
@@ -24,8 +24,7 @@
                 <input type="text" formControlName="username" 
                                     class="form-control" 
                                     placeholder="Username"
-                                    [ngClass]="{'red-border' : signupForm.get('username').invalid && signupForm.get('username').dirty}"
-                                    >
+                                    [ngClass]="{'red-border' : signupForm.get('username').invalid && signupForm.get('username').dirty}">
                 <div *ngIf="signupForm.get('username').invalid" class="error-label">
                     <div *ngIf="signupForm.get('username').hasError('required') && (signupForm.get('username').dirty)"> 
                         <i class="fa fa-exclamation-circle"></i> Username is required
@@ -66,9 +65,10 @@
                     <nz-date-picker 
                         formControlName="date"
                         [nzFormat]="dateFormat"
+                        nzPlaceHolder="Date of Birth"
                         [nzMode]="mode"
                         (nzOnOpenChange)="handleDateOpenChange($event)"
-                        >
+                    >
                     </nz-date-picker>
                 </div>
             </div>

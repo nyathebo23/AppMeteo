@@ -20,6 +20,20 @@
         max-width: 12.5%;
       }
   }
+  .btn-width{
+    width: 300px;
+  }
+  @media(max-width : 800px){
+    .btn-width{
+      width: 200px;
+    }
+  }
+  @media(max-width : 420px){
+    .btn-width{
+      width: 150px;
+    }
+  }
+  
   .btn-flat{
     border : 2px solid white;
   }
