@@ -17,6 +17,21 @@ import { AdressesRegisteredComponent } from './adresses-registered/adresses-regi
 import { UserService } from './services/user.service';
 import { LocationService } from './services/location.service';
 import { HomeComponent } from './home/home.component';
+import { NgxIndexedDBModule } from 'ngx-indexed-db';
+
+const dbConfig: DBConfig  = {
+  name: 'MyDb',
+  version: 1,
+  objectStoresMeta: [{
+    store: 'location',
+    storeConfig: { keyPath: 'id', autoIncrement: true },
+    storeSchema: [
+      { name: 'pays', keypath: 'pays', options: { unique: false } },
+      { name: 'region', keypath: 'region', options: { unique: false } },
+      { name: 'ville', keypath: 'ville', options: { unique: false } }
+    ]
+  }]
+};
 
 
 @NgModule({
@@ -39,7 +54,8 @@ import { HomeComponent } from './home/home.component';
     FontAwesomeModule,
     NgZorroAntdModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxIndexedDBModule.forRoot(dbConfig)
   ],
   providers: [{provide: NZ_I18N, useValue: en_US},
               UserService,
